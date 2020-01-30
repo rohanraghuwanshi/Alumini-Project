@@ -3,11 +3,35 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+class Program(models.Model):
+
+    program = models.CharField(max_length=50)
+
+    class Meta:
+        verbose_name = "Program"
+        verbose_name_plural = "Programs"
+
+    def __str__(self):
+        return self.program
+
+class Branch(models.Model):
+
+    branch = models.CharField(max_length=20)
+    specialization = models.CharField(max_length=50, null=True, blank=True)
+
+    class Meta:
+        verbose_name = "Branch"
+        verbose_name_plural = "Branches"
+
+    def __str__(self):
+        return self.branch
+
+
 class CollegeDetails(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    course_name = models.CharField(max_length=50)
-    branch = models.CharField(max_length=50)
+    program = models.ForeignKey(Program, on_delete=models.CASCADE)
+    branch = models.ForeignKey(Branch, on_delete=models.CASCADE)
     batch = models.IntegerField()
 
     class Meta:
