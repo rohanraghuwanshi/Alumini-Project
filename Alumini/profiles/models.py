@@ -15,7 +15,7 @@ class Profile(models.Model):
     twitter = models.URLField(max_length=200, blank=True, null=True)
     linkedin = models.URLField(max_length=200, blank=True, null=True)
     github = models.URLField(max_length=200, blank=True, null=True)
-    profilepic = models.ImageField(default='/profile_pics/default.png', upload_to='pictures/profile_pics', blank='true')
+    profilepic = models.ImageField(default='Pictures/profile_pics/default.png', upload_to='Pictures/profile_pics', blank='true')
 
     class Meta:
         verbose_name = "Profile"

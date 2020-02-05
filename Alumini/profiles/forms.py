@@ -1,6 +1,8 @@
 from django import forms
 from django.contrib.auth.models import User
 
+from .models import Profile
+
 class UserRegistrationForm(forms.ModelForm):
 
     first_name = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'First Name'}) , required=True)
@@ -28,3 +30,10 @@ class UserRegistrationForm(forms.ModelForm):
         if c_pass != passw:
             self.add_error('confirm_password', "Password didn't matched")
         return cleaned_data
+
+class ProfilePictureForm(forms.ModelForm):
+    profilepic = forms.ImageField(required=False)
+    
+    class Meta:
+        model = Profile
+        fields = ('profilepic',)
