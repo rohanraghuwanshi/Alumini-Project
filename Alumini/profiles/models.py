@@ -3,44 +3,6 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-class Program(models.Model):
-
-    program = models.CharField(max_length=50)
-
-    class Meta:
-        verbose_name = "Program"
-        verbose_name_plural = "Programs"
-
-    def __str__(self):
-        return self.program
-
-class Branch(models.Model):
-
-    branch = models.CharField(max_length=20)
-    specialization = models.CharField(max_length=50, null=True, blank=True)
-
-    class Meta:
-        verbose_name = "Branch"
-        verbose_name_plural = "Branches"
-
-    def __str__(self):
-        return self.branch
-
-
-class CollegeDetails(models.Model):
-
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    program = models.ForeignKey(Program, on_delete=models.CASCADE)
-    branch = models.ForeignKey(Branch, on_delete=models.CASCADE)
-    batch = models.IntegerField()
-
-    class Meta:
-        verbose_name = "College Detail"
-        verbose_name_plural = "College Details"
-
-    def __str__(self):
-        return str(self.user)
-
 class Profile(models.Model):
     
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -48,15 +10,88 @@ class Profile(models.Model):
     bio = models.TextField(blank=True, null=True)
     phone = models.CharField(max_length=12, blank=True, null=True)
     address = models.TextField(blank=True, null=True)
-    facebook = models.URLField(max_length=100, blank=True, null=True)
-    instagram = models.URLField(max_length=100, blank=True, null=True)
-    linkedin = models.URLField(max_length=100, blank=True, null=True)
-    github = models.URLField(max_length=100, blank=True, null=True)
+    facebook = models.URLField(max_length=200, blank=True, null=True)
+    instagram = models.URLField(max_length=200, blank=True, null=True)
+    twitter = models.URLField(max_length=200, blank=True, null=True)
+    linkedin = models.URLField(max_length=200, blank=True, null=True)
+    github = models.URLField(max_length=200, blank=True, null=True)
     profilepic = models.ImageField(default='/profile_pics/default.png', upload_to='pictures/profile_pics', blank='true')
 
     class Meta:
         verbose_name = "Profile"
         verbose_name_plural = "Profiles"
+
+    def __str__(self):
+        return str(self.user)
+
+class Education(models.Model):
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    institution_name = models.CharField(max_length=100, blank=True, null=True)
+    program_name = models.CharField(max_length=50, blank=True, null=True)
+    branch = models.CharField(max_length=50, blank=True, null=True)
+    cgpa = models.FloatField(blank=True, null=True)
+    start_date = models.DateField(auto_now=False, auto_now_add=False, blank=True, null=True)
+    end_date = models.DateField(auto_now=False, auto_now_add=False, blank=True, null=True)
+
+    class Meta:
+        verbose_name = "Education"
+        verbose_name_plural = "Education"
+
+    def __str__(self):
+        return str(self.user)
+
+class Skills(models.Model):
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    skill = models.CharField(max_length=50)
+
+    class Meta:
+        verbose_name = "Skills"
+        verbose_name_plural = "Skills"
+
+    def __str__(self):
+        return str(self.user)
+
+class Experience(models.Model):
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    experience = models.CharField(max_length=50)
+    organisation = models.CharField(max_length=50)
+    description = models.TextField()
+    start_date = models.DateField(auto_now=False, auto_now_add=False)
+    end_date = models.DateField(auto_now=False, auto_now_add=False)
+
+    class Meta:
+        verbose_name = "Experience"
+        verbose_name_plural = "Experiences"
+
+    def __str__(self):
+        return str(self.user)
+
+class Achievement(models.Model):
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    achievement = models.CharField(max_length=100)
+    description = models.TextField()
+
+    class Meta:
+        verbose_name = "Achievement"
+        verbose_name_plural = "Achievements"
+
+    def __str__(self):
+        return str(self.user)
+
+class Testimonial(models.Model):
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    testimonial_from = models.CharField(max_length=50)
+    occupation = models.CharField(max_length=50)
+    testimonial_desc = models.TextField()
+
+    class Meta:
+        verbose_name = "Testimonial"
+        verbose_name_plural = "Testimonials"
 
     def __str__(self):
         return str(self.user)
