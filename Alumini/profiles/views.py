@@ -5,7 +5,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.views.generic import CreateView, UpdateView
 
-from .forms import UserRegistrationForm, ProfilePictureForm
+from .forms import *
 from .models import Profile
 
 # Create your views here.
@@ -26,7 +26,7 @@ class UserRegistrationView(CreateView):
                             password=form.cleaned_data['password'],
                         )
             login(self.request, new_user)
-            return redirect('/registration/add-profile-picture')
+            return redirect('/profile/registration/add-profile-picture')
         else:
             return super().form_valid(form)
 
@@ -38,6 +38,15 @@ class ProfilePictureUploadView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.user = self.request.user
-        return super(ProfilePictureUploadView, self).form_valid(form)
+        form.save()
+        return redirect('/profile/registration/complete-profile/'+str(self.request.user.profile.id))
 
-    success_url = reverse_lazy('')
+class ProfileCompletionView(UpdateView):
+    model = Profile
+    form_class = ProfileCompletionForm
+
+    template_name = "registration/profile_complete.html"
+
+    def form_valid(self, form):
+        form.save()
+        return redirect('/profile/registration/add-profile-links/'+str(self.request.user.profile.id))

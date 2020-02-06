@@ -37,3 +37,19 @@ class ProfilePictureForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ('profilepic',)
+
+class ProfileCompletionForm(forms.ModelForm):
+
+    profession = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Profession'}), required=False)
+    bio = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Bio'}), required=False)
+    phone = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Phone'}), required=False)
+    address = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Address'}), required=False)
+    
+    class Meta:
+        model = Profile
+        fields = (
+            'profession',
+            'bio',
+            'phone',
+            'address',
+        )
