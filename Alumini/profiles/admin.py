@@ -17,6 +17,10 @@ class AchievementAdmin(admin.ModelAdmin):
 
 class TestimonialAdmin(admin.ModelAdmin):
     list_display = ['user', 'testimonial_from']
+
+class AddressAdmin(admin.ModelAdmin):
+    list_display = ['user', 'locality', 'city', 'state']
+
 # Register your models here.
 
 admin.site.register(Profile, ProfileAdmin)
@@ -24,4 +28,5 @@ admin.site.register(Education, EducationAdmin)
 admin.site.register(Experience, ExperienceAdmin)
 admin.site.register(Achievement, AchievementAdmin)
 admin.site.register(Testimonial, TestimonialAdmin)
+admin.site.register(Address, AddressAdmin)
 admin.site.register(Skills)

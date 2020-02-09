@@ -9,7 +9,6 @@ class Profile(models.Model):
     profession = models.CharField(max_length=50, blank=True, null=True)
     bio = models.TextField(blank=True, null=True)
     phone = models.CharField(max_length=12, blank=True, null=True)
-    address = models.TextField(blank=True, null=True)
     facebook = models.URLField(max_length=200, blank=True, null=True)
     instagram = models.URLField(max_length=200, blank=True, null=True)
     twitter = models.URLField(max_length=200, blank=True, null=True)
@@ -56,11 +55,11 @@ class Skills(models.Model):
 class Experience(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    experience = models.CharField(max_length=50)
-    organisation = models.CharField(max_length=50)
-    description = models.TextField()
-    start_date = models.DateField(auto_now=False, auto_now_add=False)
-    end_date = models.DateField(auto_now=False, auto_now_add=False)
+    experience = models.CharField(max_length=50, blank=True, null=True)
+    organisation = models.CharField(max_length=50, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    start_date = models.DateField(auto_now=False, auto_now_add=False, blank=True, null=True)
+    end_date = models.DateField(auto_now=False, auto_now_add=False, blank=True, null=True)
 
     class Meta:
         verbose_name = "Experience"
@@ -72,8 +71,8 @@ class Experience(models.Model):
 class Achievement(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    achievement = models.CharField(max_length=100)
-    description = models.TextField()
+    achievement = models.CharField(max_length=100, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
 
     class Meta:
         verbose_name = "Achievement"
@@ -85,13 +84,29 @@ class Achievement(models.Model):
 class Testimonial(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    testimonial_from = models.CharField(max_length=50)
-    occupation = models.CharField(max_length=50)
-    testimonial_desc = models.TextField()
+    testimonial_from = models.CharField(max_length=50, blank=True, null=True)
+    occupation = models.CharField(max_length=50, blank=True, null=True)
+    testimonial_desc = models.TextField(blank=True, null=True)
 
     class Meta:
         verbose_name = "Testimonial"
         verbose_name_plural = "Testimonials"
+
+    def __str__(self):
+        return str(self.user)
+
+class Address(models.Model):
+
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    house_number = models.CharField(max_length=10, blank=True, null=True)
+    locality = models.CharField(max_length=50, blank=True, null=True)
+    landmark = models.CharField(max_length=50, blank=True, null=True)
+    city = models.CharField(max_length=50, blank=True, null=True)
+    state = models.CharField(max_length=50, blank=True, null=True)
+
+    class Meta:
+        verbose_name = "Address"
+        verbose_name_plural = "Addresss"
 
     def __str__(self):
         return str(self.user)
