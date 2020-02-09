@@ -10,5 +10,6 @@ urlpatterns = [
     path('registration/', UserRegistrationView.as_view(), name="registration"),
     path('registration/add-profile-picture/', ProfilePictureUploadView.as_view(), name="profilepic_upload"),
     path('registration/complete-profile/<int:pk>/', ProfileCompletionView.as_view(), name='profile_completion'),
+    path('registration/add-profile-links/<int:pk>/', ProfileLinkAdditionView.as_view(), name='profile_completion'),
     path('logout/', LogoutView.as_view(), name='logout'),
 ]

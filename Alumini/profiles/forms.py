@@ -53,3 +53,21 @@ class ProfileCompletionForm(forms.ModelForm):
             'phone',
             'address',
         )
+
+class ProfileLinksForm(forms.ModelForm):
+
+    facebook = forms.URLField(widget=forms.TextInput(attrs={'placeholder':'Facebook'}), required=False)
+    instagram = forms.URLField(widget=forms.TextInput(attrs={'placeholder':'Instagram'}), required=False)
+    twitter = forms.URLField(widget=forms.TextInput(attrs={'placeholder':'Twitter'}), required=False)
+    linkedin = forms.URLField(widget=forms.TextInput(attrs={'placeholder':'Linked In'}), required=False)
+    github = forms.URLField(widget=forms.TextInput(attrs={'placeholder':'Github'}), required=False)
+    
+    class Meta:
+        model = Profile
+        fields = (
+            'facebook',
+            'instagram',
+            'twitter',
+            'linkedin',
+            'github'
+        )

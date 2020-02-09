@@ -50,3 +50,13 @@ class ProfileCompletionView(UpdateView):
     def form_valid(self, form):
         form.save()
         return redirect('/profile/registration/add-profile-links/'+str(self.request.user.profile.id))
+
+class ProfileLinkAdditionView(UpdateView):
+    model = Profile
+    form_class = ProfileLinksForm
+
+    template_name = "registration/profile_links.html"
+
+    def form_valid(self, form):
+        form.save()
+        return redirect('/')
