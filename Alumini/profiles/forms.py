@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 
-from .models import Profile
+from .models import Profile, Address
 
 class UserRegistrationForm(forms.ModelForm):
 
@@ -51,7 +51,23 @@ class ProfileCompletionForm(forms.ModelForm):
             'profession',
             'bio',
             'phone',
-            'address',
+        )
+
+class AddressForm(forms.ModelForm):
+    
+    house_number = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'House Number'}) , required=True)
+    locality = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Locality'}) , required=True)
+    landmark = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Landmark'}) , required=True)
+    city = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'City'}) , required=True)
+    state = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'State'}) , required=True)
+    class Meta:
+        model = Address
+        fields = (
+            'house_number',
+            'locality',
+            'landmark',
+            'city',
+            'state'
         )
 
 class ProfileLinksForm(forms.ModelForm):

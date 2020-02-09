@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 from django.views.generic import CreateView, UpdateView
 
 from .forms import *
-from .models import Profile
+from .models import Profile, Address
 
 # Create your views here.
 
@@ -48,6 +48,17 @@ class ProfileCompletionView(UpdateView):
     template_name = "registration/profile_complete.html"
 
     def form_valid(self, form):
+        form.save()
+        return redirect('/profile/registration/add-address/')
+
+class AddressView(LoginRequiredMixin, CreateView):
+    model = Address
+    form_class = AddressForm
+
+    template_name = "registration/address.html"
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
         form.save()
         return redirect('/profile/registration/add-profile-links/'+str(self.request.user.profile.id))
 

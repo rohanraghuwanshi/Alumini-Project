@@ -106,7 +106,7 @@ class Address(models.Model):
 
     class Meta:
         verbose_name = "Address"
-        verbose_name_plural = "Addresss"
+        verbose_name_plural = "Addresses"
 
     def __str__(self):
         return str(self.user)
