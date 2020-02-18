@@ -14,6 +14,25 @@
 </head>
 
 <body>
+    <header>
+        <div class="header-wrapper p-4 col-12">
+            <div class="header-content container row">
+
+                <div class="logo col-lg-2 col-md-3 col-sm-3">
+                    <h1>Alumini</h1>
+                </div>
+
+                <div class="search-form-wrapper col-lg-9 col-md-7">
+                    <form method="post" class="search-form row">
+                        <input type="text" class="textbox col-lg-11 col-md-10" placeholder="Search">
+                        <button type="submit" class="button col-lg-1 col-md-2"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+
+                <div class="menu_toggler col-1"><span></span></div>
+
+            </div>
+        </div>
 
     <div class="navbar-wrappper">
         <nav>
@@ -34,15 +53,15 @@
                     <a href="{% url 'profiles:login' %}"><i class="fa fa-sign-in"> </i> Log in</a>
                 {% endif %}
             </div>
-            <div class="menu__toggler"><span></span></div>
         </nav>
     </div>
+    </header>
 
     {% block body_block %}
     {% endblock body_block %}
 
     <footer class="footer">
-        <div class="mt-5 pt-5 pb-5">
+        <div class="pt-5 pb-5">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-5 col-xs-12 about-company">
