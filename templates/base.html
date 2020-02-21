@@ -8,9 +8,11 @@
     <title>Alumini</title>
 
     <!-- link here css files -->
+    {% block css_block %}
+    {% endblock css_block %}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'homeapp/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
 <body>
@@ -34,7 +36,7 @@
             </div>
         </div>
 
-    <div class="navbar-wrappper">
+        <div class="navbar-wrappper">
         <nav>
             <div class="menu">
                 <a href="{% url 'homeapp:index' %}"><i class="fa fa-home"> </i> Home</a>
@@ -54,7 +56,7 @@
                 {% endif %}
             </div>
         </nav>
-    </div>
+        </div>
     </header>
 
     {% block body_block %}
@@ -89,6 +91,8 @@
     </footer>
 
     <!-- linking here script files -->
+    {% block script_block %}
+    {% endblock script_block %}
     <script src="{% static 'js/custom.js' %}"></script>
 
 </body>
