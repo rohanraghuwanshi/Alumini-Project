@@ -8,14 +8,35 @@
     <title>Alumini</title>
 
     <!-- link here css files -->
+    {% block css_block %}
+    {% endblock css_block %}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
 <body>
+    <header>
+        <div class="header-wrapper p-4 col-12">
+            <div class="header-content container row">
 
-    <div class="navbar-wrappper">
+                <div class="logo col-lg-2 col-md-3 col-sm-3">
+                    <h1>Alumini</h1>
+                </div>
+
+                <div class="search-form-wrapper col-lg-9 col-md-7">
+                    <form method="post" class="search-form row">
+                        <input type="text" class="textbox col-lg-11 col-md-10" placeholder="Search">
+                        <button type="submit" class="button col-lg-1 col-md-2"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+
+                <div class="menu_toggler col-1"><span></span></div>
+
+            </div>
+        </div>
+
+        <div class="navbar-wrappper">
         <nav>
             <div class="menu">
                 <a href="{% url 'homeapp:index' %}"><i class="fa fa-home"> </i> Home</a>
@@ -34,15 +55,15 @@
                     <a href="{% url 'profiles:login' %}"><i class="fa fa-sign-in"> </i> Log in</a>
                 {% endif %}
             </div>
-            <div class="menu__toggler"><span></span></div>
         </nav>
-    </div>
+        </div>
+    </header>
 
     {% block body_block %}
     {% endblock body_block %}
 
     <footer class="footer">
-        <div class="mt-5 pt-5 pb-5">
+        <div class="pt-5 pb-5">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-5 col-xs-12 about-company">
@@ -70,6 +91,8 @@
     </footer>
 
     <!-- linking here script files -->
+    {% block script_block %}
+    {% endblock script_block %}
     <script src="{% static 'js/custom.js' %}"></script>
 
 </body>

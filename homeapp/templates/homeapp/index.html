@@ -1,0 +1,48 @@
+{% extends 'base.html' %}{% load static %}
+
+{% block css_block %}
+    <link rel="stylesheet" href="{% static 'css/swiper/swiper.min.css' %}">
+    
+{% endblock css_block %}
+{% block body_block %}
+    <section class="slider-section">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-image: url('{% static 'images/slider/1.jpg' %}');">
+                    <div class="slide-wrapper">
+                        <div class="slider-content">
+                            <h1>OUR GREATEST DISCOVERY IS YOU</h1>
+                            <p>Sub-heading here</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide" style="background-image: url('{% static 'images/slider/2.jpg' %}');">
+                    <div class="slide-wrapper">
+                        <div class="slider-content">
+                            <h1>WE'RE LUCKY TO HAVE HAD YOU</h1>
+                            <p>Sub-heading here</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide" style="background-image: url('{% static 'images/slider/3.jpg' %}');">
+                    <div class="slide-wrapper">
+                        <div class="slider-content">
+                            <h1>Heading here</h1>
+                            <p>Sub-heading here</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+{% endblock body_block %}
+
+{% block script_block %}
+    <script src="{% static 'js/swiper/swiper.min.js' %}"></script>
+{% endblock script_block %}

@@ -1,0 +1,1 @@
+web: gunicorn Alumini.wsgi:application --log-file -
