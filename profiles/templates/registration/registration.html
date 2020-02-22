@@ -1,18 +1,25 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+<section class="login-section">
+<div class="login-page">
+<div class="form">
+        <h1 class="pb-3">Register!</h1>
 <form class="login-form" method="POST" enctype=multipart/form-data>
         {% csrf_token %}
-        <h1>Register!</h1>
-        {{ form.first_name.errors }}
-        <label>{{ form.first_name }}</label><br>
-        {{ form.last_name.errors }}
-        <label>{{ form.last_name }}</label><br>
-        {{ form.username.errors }}
-        <label>{{ form.username }}</label><br>
-        {{ form.email.errors }}
-        <label>{{ form.email }}</label><br>
-        {{ form.password.errors }}
-        <label>{{ form.password }}</label><br>
-        {{ form.confirm_password.errors }}
-        <label>{{ form.confirm_password }}</label><br><br>
-        <label><button type="submit" id='button' name="submit">Register</button><label>
-        {% comment %} <p class="message">Already registered? <a href="{% url "login" %}">Log In</a></p> {% endcomment %}
+        {{ form.first_name }}
+        {{ form.last_name }}
+        {{ form.username }}
+        {{ form.email }}
+        {{ form.password }}
+        {{ form.confirm_password }}<br>
+        <button type="submit">Register</button>
+        <p class="message">Already registered? <a href="{% url "profiles:login" %}">Log In</a></p>
 </form>
+</div>
+</div>
+</section>
+{% endblock body_block %}
+
+{% block footer %}
+{% endblock footer %}

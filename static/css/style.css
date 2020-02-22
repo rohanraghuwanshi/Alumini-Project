@@ -108,8 +108,9 @@ head .container {
     margin: auto;
 }
 
-header .logo {
+header .logo a {
     color: #ff1100;
+    text-decoration: none;
 }
 
 header .search-form {
@@ -295,18 +296,6 @@ header .search-form .button:hover {
     z-index: 1;
     max-width: 300px;
     margin: 0 auto;
-}
-
-.login-page .container:before,
-.login-page .container:after {
-    content: "";
-    display: block;
-    clear: both;
-}
-
-.login-page .container .info {
-    margin: 50px auto;
-    text-align: center;
 }
 
 .login-page h1 {
