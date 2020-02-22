@@ -186,13 +186,8 @@ header .search-form .button:hover {
     text-align: center;
     font-size: 18px;
     background: #fff;
-    background-repeat: no-repeat;
-    background-size: cover;
     background-position: center;
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -228,6 +223,98 @@ header .search-form .button:hover {
 
 .slider-section .swiper-slide img {
     width: 100%;
+}
+
+
+/* log in page Css */
+
+.login-section {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.login-page {
+    width: 400px;
+    padding: 10% 0 0;
+    margin: auto;
+}
+
+.login-page .form {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 100%;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 #ff110022, 0 5px 5px 0 #ff110022;
+}
+
+.login-page .form input {
+    outline: 0;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.login-page .form button {
+    outline: 0;
+    background: #ff1100de;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+
+.login-page .form button:hover,
+.login-page .form button:active,
+.login-page .form button:focus {
+    background: #ff1100;
+}
+
+.login-page .form .message {
+    margin: 15px 0 0;
+    color: #838383;
+    font-size: 12px;
+}
+
+.login-page .form .message a {
+    color: #ff1100;
+    text-decoration: none;
+}
+
+.login-page .container {
+    position: relative;
+    z-index: 1;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.login-page .container:before,
+.login-page .container:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.login-page .container .info {
+    margin: 50px auto;
+    text-align: center;
+}
+
+.login-page h1 {
+    margin: 0 0 15px;
+    padding: 0;
+    font-size: 36px;
+    font-weight: 300;
+    color: #ff1100;
 }
 
 

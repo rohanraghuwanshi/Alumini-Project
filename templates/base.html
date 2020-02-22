@@ -62,6 +62,8 @@
     {% block body_block %}
     {% endblock body_block %}
 
+
+{% block footer %}
     <footer class="footer">
         <div class="pt-5 pb-5">
             <div class="container">
@@ -89,12 +91,12 @@
             </div>
         </div>
     </footer>
+{% endblock footer %}
 
     <!-- linking here script files -->
     {% block script_block %}
     {% endblock script_block %}
     <script src="{% static 'js/custom.js' %}"></script>
-
 </body>
 
 </html>

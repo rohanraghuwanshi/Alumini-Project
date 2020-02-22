@@ -45,4 +45,17 @@
 
 {% block script_block %}
     <script src="{% static 'js/swiper/swiper.min.js' %}"></script>
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+    cssMode: true,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+        el: '.swiper-pagination'
+    },
+    mousewheel: true,
+    keyboard: true,
+});</script>
 {% endblock script_block %}
