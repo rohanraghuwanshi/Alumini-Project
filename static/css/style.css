@@ -108,9 +108,8 @@ head .container {
     margin: auto;
 }
 
-header .logo a {
+header .logo {
     color: #ff1100;
-    text-decoration: none;
 }
 
 header .search-form {
@@ -187,8 +186,10 @@ header .search-form .button:hover {
     text-align: center;
     font-size: 18px;
     background: #fff;
-    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
+    /* Center slide text vertically */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -226,84 +227,61 @@ header .search-form .button:hover {
     width: 100%;
 }
 
-
-/* log in page Css */
-
-.login-section {
-    height: 100%;
-    width: 100%;
-    position: absolute;
+.slider-section .swiper-button-next,
+.slider-section .swiper-button-prev {
+    color: #ff1100;
 }
 
-.login-page {
-    width: 400px;
-    padding: 10% 0 0;
-    margin: auto;
-}
-
-.login-page .form {
-    position: relative;
-    z-index: 1;
-    background: #FFFFFF;
-    max-width: 100%;
-    margin: 0 auto 100px;
-    padding: 45px;
-    text-align: center;
-    box-shadow: 0 0 20px 0 #ff110022, 0 5px 5px 0 #ff110022;
-}
-
-.login-page .form input {
-    outline: 0;
-    width: 100%;
-    border: 0;
-    margin: 0 0 15px;
-    padding: 15px;
-    box-sizing: border-box;
-    font-size: 14px;
-}
-
-.login-page .form button {
-    outline: 0;
-    background: #ff1100de;
-    width: 100%;
-    border: 0;
-    padding: 15px;
-    color: #FFFFFF;
-    font-size: 14px;
-    transition: all 0.3 ease;
-    cursor: pointer;
-}
-
-.login-page .form button:hover,
-.login-page .form button:active,
-.login-page .form button:focus {
+.slider-section .swiper-pagination-bullet-active {
     background: #ff1100;
 }
 
-.login-page .form .message {
-    margin: 15px 0 0;
-    color: #838383;
+
+/* blog section */
+
+.main_title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.main_title h1 {
+    color: #ff1100;
+}
+
+.index_blog_text .date {
+    margin-top: 24px;
+    margin-bottom: 15px;
+}
+
+.index_blog_text a {
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.index_blog_text a h4:hover {
+    color: #ff1100;
+}
+
+.index_blog_text .date a {
+    color: #777777;
     font-size: 12px;
 }
 
-.login-page .form .message a {
-    color: #ff1100;
-    text-decoration: none;
-}
-
-.login-page .container {
-    position: relative;
-    z-index: 1;
+.index_blog_text h4 {
+    font-size: 21px;
+    color: #222222;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    transition: all 300ms linear 0s;
+    font-weight: bold;
+    text-transform: uppercase;
     max-width: 300px;
-    margin: 0 auto;
 }
 
-.login-page h1 {
-    margin: 0 0 15px;
-    padding: 0;
-    font-size: 36px;
-    font-weight: 300;
-    color: #ff1100;
+.index_blog_text p {
+    letter-spacing: 1px;
+    margin-bottom: 0px;
+    font-size: 14px;
 }
 
 
@@ -348,31 +326,3 @@ header .search-form .button:hover {
 .footer .copyright p {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-
-
-/* footer .credits-area {
-    position: absolute;
-    background: #ff1100;
-    width: 100%;
-    text-align: center;
-}
-
-footer .credits-area ul {
-    list-style: none;
-}
-
-footer .credits-area ul li {
-    float: left;
-    width: 25%;
-}
-
-footer .credits-area ul li a {
-    color: #fff;
-    opacity: 0.8;
-    text-decoration: none;
-    transition: 0.2s;
-}
-
-footer .credits-area ul li a:hover {
-    opacity: 1;
-} */
