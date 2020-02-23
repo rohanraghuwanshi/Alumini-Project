@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=K2D");
+body {
+    background-color: #fffafa;
+}
+
 
 /* Menu Css */
 
@@ -108,7 +112,7 @@ head .container {
     margin: auto;
 }
 
-header .logo {
+header .logo a {
     color: #ff1100;
 }
 
@@ -174,9 +178,6 @@ header .search-form .button:hover {
     top: 0;
 }
 
-
-/* slider css */
-
 .swiper-container {
     width: 100%;
     height: 100%;
@@ -237,6 +238,45 @@ header .search-form .button:hover {
 }
 
 
+/* about section */
+
+.about-item h4 {
+    font-weight: 800;
+    color: #ff1100;
+}
+
+.about-item p {
+    letter-spacing: 1px;
+}
+
+
+/* message section */
+
+.message-section {
+    background: #fff;
+}
+
+.message-swiper-container {
+    overflow: hidden;
+}
+
+.message-section .message-content {
+    text-align: left;
+}
+
+.message-section .message-content h2 {
+    color: #ff1100;
+}
+
+.message-section .message-content h4 {
+    color: #ab1906;
+}
+
+.message-section .message-picture img {
+    max-height: 400px;
+}
+
+
 /* blog section */
 
 .main_title {
@@ -245,7 +285,7 @@ header .search-form .button:hover {
 }
 
 .main_title h1 {
-    color: #ff1100;
+    color: #ab1906;
 }
 
 .index_blog_text .date {
