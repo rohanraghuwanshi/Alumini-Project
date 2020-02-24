@@ -19,4 +19,4 @@ class ContactRequestView(CreateView):
 
     def form_invalid(self, form):
         form.save()
-        return redirect('')
+        return redirect('/')
