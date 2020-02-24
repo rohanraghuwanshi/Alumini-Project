@@ -77,12 +77,8 @@ WSGI_APPLICATION = 'Alumini.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'Alumni_project',
-        'USER': 'uwxsyfhybwquva',
-        'PASSWORD': 'c030513e891b2abc6eb23f055ee0b802bef8307bf11461d482dd278735558e67',
-        'HOST': 'ec2-54-197-34-207.compute-1.amazonaws.com',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
