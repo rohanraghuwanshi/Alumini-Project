@@ -49,20 +49,20 @@
 	    	<div class="row">
 	    		<div class="col-lg-4 col-md-12">
 	    			<div class="about-item">
-	    				<h4><i class="fa fa-file-text-o pr-2 mb-2"> </i> About us</h4>
-	    				<p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for $17 each.</p>
+	    				<h4><i class="fa fa-file-text-o pr-2 mb-3"> </i> About us</h4>
+	    				<p class="pb-2">If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for $17 each.</p>
 	    			</div>
 	    		</div>
 	    		<div class="col-lg-4 col-md-12">
 	    			<div class="about-item">
-	    				<h4><i class="fa fa-eye pr-2 mb-2"> </i> Vision</h4>
-	    				<p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for $17 each.</p>
+	    				<h4><i class="fa fa-eye pr-2 mb-3"> </i> Vision</h4>
+	    				<p class="pb-2">If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for $17 each.</p>
 	    			</div>
 	    		</div>
 	    		<div class="col-lg-4 col-md-12">
 	    			<div class="about-item">
-	    				<h4><i class="fa fa-bullseye pr-2 mb-2"> </i> Mission</h4>
-	    				<p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for $17 each.</p>
+	    				<h4><i class="fa fa-bullseye pr-2 mb-3"> </i> Mission</h4>
+	    				<p class="pb-2">If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for $17 each.</p>
 	    			</div>
 	    		</div>
 	    	</div>
@@ -77,12 +77,12 @@
             <div class="message-swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <div class="col-lg-6">
-							<div class="message-picture">
+                        <div class="col-lg-6 col-md-12">
+							<div class="message-picture pb-3">
 								<img src="{% static 'images/home-message/msg.png' %}" alt="picture here">
 							</div>
 						</div>
-						<div class="col-lg-6">
+						<div class="col-lg-6 col-md-12">
 							<div class="message-content">
 								<h2>Eduardo</h2>
 								<h5 class="pb-2">Chairman</h5>
@@ -91,12 +91,12 @@
 						</div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="col-lg-6">
-							<div class="message-picture">
+                        <div class="col-lg-6 col-md-12">
+							<div class="message-picture pb-3">
 								<img src="{% static 'images/home-message/msg.png' %}" alt="picture here">
 							</div>
 						</div>
-						<div class="col-lg-6">
+						<div class="col-lg-6 col-md-12">
 							<div class="message-content">
 								<h2>Eduardo</h2>
 								<h5 class="pb-2">Chairman</h5>
@@ -105,12 +105,12 @@
 						</div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="col-lg-6">
-							<div class="message-picture">
+                        <div class="col-lg-6 col-md-12">
+							<div class="message-picture  pb-3">
 								<img src="{% static 'images/home-message/msg.png' %}" alt="picture here">
 							</div>
 						</div>
-						<div class="col-lg-6">
+						<div class="col-lg-6 col-md-12">
 							<div class="message-content">
 								<h2>Eduardo</h2>
 								<h5 class="pb-2">Chairman</h5>
@@ -185,15 +185,18 @@
 {% block script_block %}
     <script src="{% static 'js/swiper/swiper.min.js' %}"></script>
     <script>
-    var swiper = new Swiper('.main-swiper-container', {
+    var swiper = new Swiper('.swiper-container', {
     cssMode: true,
-    loop: true,
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
     pagination: {
         el: '.swiper-pagination'
+    },
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
     },
     mousewheel: true,
     keyboard: true,
@@ -202,10 +205,6 @@
     var swiper = new Swiper('.message-swiper-container', {
       spaceBetween: 30,
       centeredSlides: true,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
       autoplay: {
         delay: 5000,
         disableOnInteraction: false,
