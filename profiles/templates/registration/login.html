@@ -1,4 +1,7 @@
 {% extends 'base.html' %}{% load static %}
+{% block css_block %}
+    <link rel="stylesheet" href="{% static 'css/registration.css' %}">
+{% endblock css_block %}
 {% block body_block %}
 
 <section class="login-section">
@@ -6,7 +9,7 @@
 
     <div class="login-page">
   <div class="form">
-  <h1 class="pb-3"> Log In</h1>
+  <h2 class="pb-3"> Log In</h2>
     <form class="login-form" method="POST">
     {% csrf_token %}
       <input type="text" name="username" placeholder="Username" required/>

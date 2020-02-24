@@ -25,7 +25,7 @@ class UserRegistrationView(CreateView):
                             password=form.cleaned_data['password'],
                         )
             login(self.request, new_user)
-            return redirect('/profile/registration/add-profile-picture')
+            return redirect('/accounts/registration/add-profile-picture')
         else:
             return super().form_valid(form)
 
@@ -38,7 +38,7 @@ class ProfilePictureUploadView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         form.save()
-        return redirect('/profile/registration/complete-profile/'+str(self.request.user.profile.id))
+        return redirect('/accounts/registration/complete-profile/'+str(self.request.user.profile.id))
 
 class ProfileCompletionView(UpdateView):
     model = Profile
@@ -48,7 +48,7 @@ class ProfileCompletionView(UpdateView):
 
     def form_valid(self, form):
         form.save()
-        return redirect('/profile/registration/add-address/')
+        return redirect('/accounts/registration/add-address/')
 
 class AddressView(LoginRequiredMixin, CreateView):
     model = Address
@@ -59,7 +59,7 @@ class AddressView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         form.save()
-        return redirect('/profile/registration/add-profile-links/'+str(self.request.user.profile.id))
+        return redirect('/accounts/registration/add-profile-links/'+str(self.request.user.profile.id))
 
 class ProfileLinkAdditionView(UpdateView):
     model = Profile

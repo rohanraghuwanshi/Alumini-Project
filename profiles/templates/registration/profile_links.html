@@ -1,10 +1,25 @@
-<form class="login-form" method="POST" enctype=multipart/form-data>
-        {% csrf_token %}
-        <h1>Fill in the details!</h1>
-        <label>{{ form.facebook }}</label><br>
-        <label>{{ form.instagram }}</label><br>
-        <label>{{ form.twitter }}</label><br>
-        <label>{{ form.linkedin }}</label><br>
-        <label>{{ form.github }}</label><br>
-        <label><button type="submit" id='button' name="submit">Register</button><label>
-</form>
+{% extends 'base.html' %}{% load static %}
+{% block css_block %}
+    <link rel="stylesheet" href="{% static 'css/registration.css' %}">
+{% endblock css_block %}
+{% block body_block %}
+<section class="login-section">
+<div class="login-page">
+<div class="form">
+        <h2 class="pb-3">Add Profile Links</h2>
+        <form class="login-form" method="POST" enctype=multipart/form-data>
+                {% csrf_token %}
+                {{ form.facebook }}
+                {{ form.instagram }}
+                {{ form.twitter }}
+                {{ form.linkedin }}
+                {{ form.github }}
+                <button type="submit" id='button' name="submit">Add</button>
+        </form>
+</div>
+</div>
+</section>
+{% endblock body_block %}
+
+{% block footer %}
+{% endblock footer %}
