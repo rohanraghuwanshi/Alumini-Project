@@ -41,7 +41,7 @@ class ProfilePictureForm(forms.ModelForm):
 class ProfileCompletionForm(forms.ModelForm):
 
     profession = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Profession'}), required=False)
-    bio = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Bio'}), required=False)
+    bio = forms.CharField(widget=forms.Textarea(attrs={'placeholder':'Bio', 'rows':'5'}), required=False)
     phone = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Phone'}), required=False)
     
     class Meta:

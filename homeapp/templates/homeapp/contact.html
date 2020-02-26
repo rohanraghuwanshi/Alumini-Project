@@ -1,14 +1,24 @@
-{% load static %}{% block body_block %}
+{% extends 'base.html' %} {% load static %}
+{% block css_block %}
+    <link rel="stylesheet" href="{% static 'css/registration.css' %}">
+{% endblock css_block %}
+{% block body_block %}
 
-        <form class="" method="POST">
+<section class="login-section">
+
+    <div class="login-page">
+  		<div class="form">
+            <h2 class="pb-3">Contact Us</h2>
+			<form class="contact-form" method="POST">
             {% csrf_token %}
-            <h1>Contact Us</h1>
-            <label>{{ form.name }}</label><br>
-            <label>{{ form.phone }}</label><br>  
-            <label>{{ form.email }}</label><br>
-            <label>{{ form.text }}</label><br>  
-            <button type="submit">Submit</button>
-            {% comment %} <p class="message">Not registered? <a href="{% url 'userconsole:register' %}"> Register!</a></p> {% endcomment %}
+					{{ form.name }}
+                    {{ form.phone }}
+                    {{ form.email }}
+                    {{ form.text }}
+				<button type="submit" class="btn-lrg submit-btn">Send Message</button>
         </form>
-    </div>
+  		</div>
+	</div>
+</section>        
+            
 {% endblock body_block %} {% block footer %} {% endblock footer %}

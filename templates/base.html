@@ -21,7 +21,7 @@
             <div class="header-content container row">
 
                 <div class="logo col-lg-2 col-md-3 col-sm-3">
-                    <h1>Alumini</h1>
+                    <a href="{% url 'homeapp:index' %}"><h1>Alumini</h1></a>
                 </div>
 
                 <div class="search-form-wrapper col-lg-9 col-md-7">
@@ -47,7 +47,7 @@
                 {% endif %}
                 <a href="#"><i class="fa fa-comment"> </i> Blog</a>
                 <a href="{% url 'homeapp:aboutus' %}"><i class="fa fa-info-circle"> </i> About Us</a>
-                <a href="{% url 'homeapp:contact' %}"><i class="fa fa-phone"> </i> Contact</a>
+                <a href="{% url 'homeapp:contact' %}"><i class="fa fa-phone"> </i> Contact Us</a>
                 
                 {% if user.is_authenticated %}
                     <a href="{% url 'profiles:logout' %}"><i class="fa fa-power-off"> </i> Log out</a>
@@ -62,6 +62,8 @@
     {% block body_block %}
     {% endblock body_block %}
 
+
+{% block footer %}
     <footer class="footer">
         <div class="pt-5 pb-5">
             <div class="container">
@@ -89,12 +91,12 @@
             </div>
         </div>
     </footer>
+{% endblock footer %}
 
     <!-- linking here script files -->
     {% block script_block %}
     {% endblock script_block %}
     <script src="{% static 'js/custom.js' %}"></script>
-
 </body>
 
 </html>

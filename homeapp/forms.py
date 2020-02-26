@@ -33,7 +33,8 @@ class ContactRequestForm(forms.ModelForm):
             ),
             'text' : forms.Textarea(
                 attrs={
-                    'placeholder':'Write your query here...'
+                    'placeholder':'Write your query here...',
+                    'rows':'5'
                 }
             )
         }
