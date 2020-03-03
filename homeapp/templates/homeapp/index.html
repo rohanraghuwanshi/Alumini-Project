@@ -124,7 +124,7 @@
     </section>
     
     <section class="blog-section pt-5 pb-5">
-    <div class="container">
+        <div class="container">
             <div class="main_title">
                 <h1>Latest Posts From Blog</h1>
             </div>
@@ -178,39 +178,11 @@
                     </div>
                 </div>
             </div>
-    </div>
+        </div>
     </section>
 {% endblock body_block %}
 
 {% block script_block %}
     <script src="{% static 'js/swiper/swiper.min.js' %}"></script>
-    <script>
-    var swiper = new Swiper('.swiper-container', {
-    cssMode: true,
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-    pagination: {
-        el: '.swiper-pagination'
-    },
-    autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-    },
-    mousewheel: false,
-    keyboard: true,
-});</script>
-    <script>
-    var swiper = new Swiper('.message-swiper-container', {
-      spaceBetween: 30,
-      centeredSlides: true,
-      autoplay: {
-        delay: 8000,
-        disableOnInteraction: false,
-      },
-      mousewheel: false,
-      keyboard: true,
-    });
-    </script>
+    <script src="{% static 'js/swiper/indexswiper.js' %}"></script>
 {% endblock script_block %}

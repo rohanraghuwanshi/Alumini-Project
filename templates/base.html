@@ -26,8 +26,8 @@
 
                 <div class="search-form-wrapper col-lg-9 col-md-7">
                     <form method="post" class="search-form row">
-                        <input type="text" class="textbox col-lg-11 col-md-10" placeholder="Search">
-                        <button type="submit" class="button col-lg-1 col-md-2"><i class="fa fa-search"></i></button>
+                        <input type="text" class="textbox col-lg-11 col-md-10 col-sm-10" placeholder="Search">
+                        <button type="submit" class="button col-lg-1 col-md-2 col-sm-2"><i class="fa fa-search"></i></button>
                     </form>
                 </div>
 
@@ -45,7 +45,8 @@
                 {% else %}
                     <a href="{% url 'profiles:login' %}"><i class="fa fa-user"> </i> Profile</a>
                 {% endif %}
-                <a href="#"><i class="fa fa-comment"> </i> Blog</a>
+                <a href="#"><i class="fa fa-comment"> </i> Blog</a>                
+                <a href="{% url 'homeapp:aboutus' %}"><i class="fa fa-envelope"> </i> Chat</a>
                 <a href="{% url 'homeapp:aboutus' %}"><i class="fa fa-info-circle"> </i> About Us</a>
                 <a href="{% url 'homeapp:contact' %}"><i class="fa fa-phone"> </i> Contact Us</a>
                 
