@@ -101,6 +101,12 @@ body {
     }
 }
 
+@media only screen and (max-width: 400px) {
+    .menu_toggler {
+        right: 23%;
+    }
+}
+
 .menu.active {
     left: 0;
 }
@@ -183,7 +189,7 @@ header .search-form .button:hover {
     opacity: 0.7;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
     header .search-form .button {
         width: 15%;
     }
@@ -394,4 +400,42 @@ header .search-form .button:hover {
 
 .footer .copyright p {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* About us section */
+.about-us-section{
+    margin-top: 100px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.our-team-section h1,
+.about-us-section h1{
+    color: #ab1906;
+}
+
+.our-team-section p,
+.about-us-section p {
+    opacity: 0.95;
+    font-size: larger;
+}
+
+.about-us-story p{
+    position: relative;
+    top: 20%;
+}
+
+.about-us-section img{
+    max-height: 350px;
+}
+
+.our-team-section a{
+    color: #ab1906;
+}
+
+@media only screen and (max-width: 740px) {
+    .about-us-section {
+        margin-top: 150px;
+    }
 }

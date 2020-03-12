@@ -10,7 +10,7 @@ var swiper = new Swiper('.swiper-container', {
         el: '.swiper-pagination'
     },
     autoplay: {
-        delay: 5000,
+        delay: 6000,
         disableOnInteraction: false,
     },
 });
