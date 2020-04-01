@@ -3,7 +3,9 @@
 body {
     background-color: #fffafa;
 }
-
+p{
+    opacity: 0.8;
+}
 
 /* Menu Css */
 
@@ -83,7 +85,7 @@ body {
     text-decoration: none;
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 767px) {
     .menu {
         width: 300px;
         left: -300px;
@@ -102,6 +104,12 @@ body {
 }
 
 @media only screen and (max-width: 400px) {
+    .menu {
+        width: 250px;
+        left: -250px;
+        padding: 50px;
+    }
+
     .menu_toggler {
         right: 23%;
     }
@@ -404,14 +412,15 @@ header .search-form .button:hover {
 
 
 /* About us section */
-.about-us-section{
+.about-us-section,
+.profile-page {
     margin-top: 100px;
     background-color: #fff;
     text-align: center;
 }
 
 .our-team-section h1,
-.about-us-section h1{
+.about-us-section h1 {
     color: #ab1906;
 }
 
@@ -420,22 +429,103 @@ header .search-form .button:hover {
     opacity: 0.95;
     font-size: larger;
 }
-
-.about-us-story p{
+/* 
+.about-us-story p {
     position: relative;
     top: 20%;
+} */
+
+.about-us-story .story-img{
+    text-align: center;
 }
 
-.about-us-section img{
+.about-us-story img {
     max-height: 350px;
 }
 
-.our-team-section a{
+.our-team-section a {
     color: #ab1906;
 }
 
 @media only screen and (max-width: 740px) {
-    .about-us-section {
+
+    .about-us-section,
+    .profile-page {
         margin-top: 150px;
     }
+}
+
+
+/* Profile page css */
+.profile-page .profile-text{
+    margin-bottom: 80px;
+    text-align: left;
+    font-size: medium;
+}
+
+.profile-text .personal-details{
+    font-size: small;
+}
+
+.profile-page div.profile-image img {
+    max-height: 400px;
+}
+
+.profile-page .profile-text h1{
+    color: #ab1906;
+}
+
+.profile-page .general-info li{
+    list-style: none;
+    font-size: small;
+}
+
+.profile-page .general-info li span{
+    min-width: 150px;
+    display: inline-block;
+}
+
+.profile-page .social-links a{
+    text-decoration: none;
+    background: #ff1100;
+    color: #fff;
+    padding: 10px;
+    transition: 0.2s;
+}
+
+.profile-page .social-links a:hover{
+    background: #ab1906;
+    color: #ffffff;
+}
+
+.experience-desc small,
+.section-title{
+    color: #ff1100 !important;
+}
+
+.experience-title h3{
+    color: #ab1906;
+}
+
+.education-section,
+.skills-section{
+    background-color: #fff;
+}
+
+.skills-section{
+    background: #fffafa;
+}
+
+.skills-section h3{
+    color: #ab1906;
+}
+
+.achievements-list li{
+    list-style: none;
+    font-size: large;
+    transition: 0.2s;
+}
+
+.achievements-list li i{
+    min-width: 20px;
 }

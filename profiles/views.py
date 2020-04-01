@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
-from django.views.generic import CreateView, UpdateView
+from django.views.generic import CreateView, UpdateView, TemplateView
 
 from .forms import *
 from .models import Profile, Address
@@ -70,3 +70,6 @@ class ProfileLinkAdditionView(UpdateView):
     def form_valid(self, form):
         form.save()
         return redirect('/')
+
+class ProfileView(TemplateView):
+    template_name = "registration/profilepage.htm"

@@ -41,12 +41,10 @@
             <div class="menu">
                 <a href="{% url 'homeapp:index' %}"><i class="fa fa-home"> </i> Home</a>
                 {% if user.is_authenticated %}
-                    <a href="#"><i class="fa fa-user"> </i> Profile</a>
-                {% else %}
-                    <a href="{% url 'profiles:login' %}"><i class="fa fa-user"> </i> Profile</a>
+                    <a href="{% url 'profiles:profile' %}"><i class="fa fa-user"> </i> Profile</a>
                 {% endif %}
                 <a href="#"><i class="fa fa-comment"> </i> Blog</a>                
-                <a href="{% url 'homeapp:aboutus' %}"><i class="fa fa-envelope"> </i> Chat</a>
+                <a href="#"><i class="fa fa-envelope"> </i> Chat</a>
                 <a href="{% url 'homeapp:aboutus' %}"><i class="fa fa-info-circle"> </i> About Us</a>
                 <a href="{% url 'homeapp:contact' %}"><i class="fa fa-phone"> </i> Contact Us</a>
                 
