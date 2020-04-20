@@ -44,7 +44,7 @@
                     <a href="{% url 'profiles:profile' %}"><i class="fa fa-user"> </i> Profile</a>
                 {% endif %}
                 <a href="#"><i class="fa fa-comment"> </i> Blog</a>                
-                <a href="#"><i class="fa fa-envelope"> </i> Chat</a>
+                <a href="{% url 'chatapp:chats' %}"><i class="fa fa-envelope"> </i> Chat</a>
                 <a href="{% url 'homeapp:aboutus' %}"><i class="fa fa-info-circle"> </i> About Us</a>
                 <a href="{% url 'homeapp:contact' %}"><i class="fa fa-phone"> </i> Contact Us</a>
                 

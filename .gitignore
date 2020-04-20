@@ -1,8 +1,10 @@
 .vscode
 Alumini/__pycache__
-profiles/migrations
 profiles/__pycache__
 homeapp/__pycache__
+chatapp/__pycache__
+profiles/migrations
 homeapp/migrations
+chatapp/migrations
 db.sqlite3
 media/

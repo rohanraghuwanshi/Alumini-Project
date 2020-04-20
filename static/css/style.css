@@ -3,9 +3,6 @@
 body {
     background-color: #fffafa;
 }
-p{
-    opacity: 0.8;
-}
 
 /* Menu Css */
 
@@ -139,6 +136,7 @@ head .container {
 
 header .logo a {
     color: #ff1100;
+    font-size: 35px;
     text-decoration: none;
 }
 
@@ -295,9 +293,11 @@ header .search-form .button:hover {
 
 /* message section */
 
+.message-section .swiper-slide,
 .message-section {
-    background: #fff;
+    background: #fffafa;
 }
+
 
 .message-swiper-container {
     overflow: hidden;
@@ -319,8 +319,35 @@ header .search-form .button:hover {
     max-height: 400px;
 }
 
+/* portfolio section */
+.portfolio-section{
+    background-color: #fff;
+}
+
+.portfolio-section .row{
+    justify-content: center;
+}
+
+.portfolio-section .zoom img {
+    max-height: 220px;
+    width: 100%;
+    height: 100%;
+}
+
+.portfolio-section .zoom {
+    transition: transform .2s;
+    padding: 0;
+}
+
+.portfolio-section .zoom:hover {
+    transform: scale(1.2);
+}
 
 /* blog section */
+
+.blog-section{
+    background: #ffffff;
+}
 
 .main_title {
     text-align: center;
@@ -413,6 +440,7 @@ header .search-form .button:hover {
 
 /* About us section */
 .about-us-section,
+#frame,
 .profile-page {
     margin-top: 100px;
     background-color: #fff;
@@ -429,11 +457,6 @@ header .search-form .button:hover {
     opacity: 0.95;
     font-size: larger;
 }
-/* 
-.about-us-story p {
-    position: relative;
-    top: 20%;
-} */
 
 .about-us-story .story-img{
     text-align: center;
@@ -450,6 +473,7 @@ header .search-form .button:hover {
 @media only screen and (max-width: 740px) {
 
     .about-us-section,
+    #frame,
     .profile-page {
         margin-top: 150px;
     }
@@ -510,10 +534,6 @@ header .search-form .button:hover {
 .education-section,
 .skills-section{
     background-color: #fff;
-}
-
-.skills-section{
-    background: #fffafa;
 }
 
 .skills-section h3{
