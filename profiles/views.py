@@ -4,14 +4,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.views.generic import CreateView, UpdateView, TemplateView
 
-from .forms import (
-        UserRegistrationForm,
-        ProfileCompletionForm,
-        ProfileLinksForm,
-        ProfilePictureForm,
-        AddressForm
-    )
-    
+from .forms import *
 from .models import Profile, Address
 
 # Create your views here.

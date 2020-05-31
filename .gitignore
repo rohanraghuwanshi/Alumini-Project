@@ -3,6 +3,8 @@ Alumini/__pycache__
 profiles/__pycache__
 homeapp/__pycache__
 chatapp/__pycache__
+blog/__pycache__
+blog/migrations
 profiles/migrations
 homeapp/migrations
 chatapp/migrations
