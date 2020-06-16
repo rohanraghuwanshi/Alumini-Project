@@ -7,31 +7,16 @@
     <section class="slider-section">
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide" style="background-image: url('{% static 'images/slider/1.jpg' %}');">
+                {% for slider in  sliders %}
+                <div class="swiper-slide" style="background-image: url('{{ slider.image.url }}');">
                     <div class="slide-wrapper">
                         <div class="slider-content">
-                            <h1>OUR GREATEST DISCOVERY IS YOU</h1>
-                            <p>Sub-heading here</p>
+                            <h1>{{ slider.heading }}</h1>
+                            <p>{{ slider.subheading }}</p>
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide" style="background-image: url('{% static 'images/slider/2.jpg' %}');">
-                    <div class="slide-wrapper">
-                        <div class="slider-content">
-                            <h1>WE'RE LUCKY TO HAVE HAD YOU</h1>
-                            <p>Sub-heading here</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide" style="background-image: url('{% static 'images/slider/3.jpg' %}');">
-                    <div class="slide-wrapper">
-                        <div class="slider-content">
-                            <h1>Heading here</h1>
-                            <p>Sub-heading here</p>
-                        </div>
-                    </div>
-                </div>
-
+                {% endfor %}
             </div>
             <!-- Add Arrows -->
             <div class="swiper-button-next"></div>
@@ -47,24 +32,14 @@
 	    		<h1>Who We Are</h1>
 	    	</div>
 	    	<div class="row">
+            {% for a in aboutus %}
 	    		<div class="col-lg-4 col-md-12">
 	    			<div class="about-item">
-	    				<h4><i class="fa fa-file-text-o pr-2 mb-3"> </i> About us</h4>
-	    				<p class="pb-2">If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for $17 each.</p>
+	    				<h4>{{ a.name }}</h4>
+	    				<p class="pb-2">{{ a.text }}</p>
 	    			</div>
 	    		</div>
-	    		<div class="col-lg-4 col-md-12">
-	    			<div class="about-item">
-	    				<h4><i class="fa fa-eye pr-2 mb-3"> </i> Vision</h4>
-	    				<p class="pb-2">If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for $17 each.</p>
-	    			</div>
-	    		</div>
-	    		<div class="col-lg-4 col-md-12">
-	    			<div class="about-item">
-	    				<h4><i class="fa fa-bullseye pr-2 mb-3"> </i> Mission</h4>
-	    				<p class="pb-2">If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for $17 each.</p>
-	    			</div>
-	    		</div>
+            {% endfor %}
 	    	</div>
 	    </div>
     </section>
@@ -76,48 +51,22 @@
 	    	</div>
             <div class="message-swiper-container">
                 <div class="swiper-wrapper">
+                {% for msg in messages %}
                     <div class="swiper-slide">
                         <div class="col-lg-6 col-md-12">
 							<div class="message-picture pb-3">
-								<img src="{% static 'images/home-message/msg.png' %}" alt="picture here">
+								<img src="{{ msg.image.url }}" alt="picture here">
 							</div>
 						</div>
 						<div class="col-lg-6 col-md-12">
 							<div class="message-content">
-								<h2>Eduardo</h2>
-								<h5 class="pb-2">Chairman</h5>
-								<p>You will begin to realise why this exercise is called the Dickens Pattern (with reference to the ghost showing Scrooge some different futures). Dickens Pattern (with reference to the ghost showing Scrooge some different futures)</p>
+								<h2>{{ msg.name }}</h2>
+								<h5 class="pb-2">{{ msg.post }}</h5>
+								<p>{{ msg.message }}</p>
 							</div>
 						</div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="col-lg-6 col-md-12">
-							<div class="message-picture pb-3">
-								<img src="{% static 'images/home-message/msg.png' %}" alt="picture here">
-							</div>
-						</div>
-						<div class="col-lg-6 col-md-12">
-							<div class="message-content">
-								<h2>Eduardo</h2>
-								<h5 class="pb-2">Chairman</h5>
-								<p>You will begin to realise why this exercise is called the Dickens Pattern (with reference to the ghost showing Scrooge some different futures). Dickens Pattern (with reference to the ghost showing Scrooge some different futures)</p>
-							</div>
-						</div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="col-lg-6 col-md-12">
-							<div class="message-picture  pb-3">
-								<img src="{% static 'images/home-message/msg.png' %}" alt="picture here">
-							</div>
-						</div>
-						<div class="col-lg-6 col-md-12">
-							<div class="message-content">
-								<h2>Eduardo</h2>
-								<h5 class="pb-2">Chairman</h5>
-								<p>You will begin to realise why this exercise is called the Dickens Pattern (with reference to the ghost showing Scrooge some different futures). Dickens Pattern (with reference to the ghost showing Scrooge some different futures)</p>
-							</div>
-						</div>
-                    </div>         
+                {% endfor %}      
                 </div>
             </div>
         </div>    
@@ -127,8 +76,9 @@
         <div class="container">
             <div class="main_title">
                 <h1>Latest Posts From Blog</h1>
+                <p>This section will be added afterwards</p>
             </div>
-            <div class="row">
+            {% comment %} <div class="row">
                 <div class="col-lg-4  pt-3 pb-3">
                     <div class="index_blog_item">
                         <div class="index_blog_img">
@@ -177,7 +127,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> {% endcomment %}
         </div>
     </section>
 {% endblock body_block %}
