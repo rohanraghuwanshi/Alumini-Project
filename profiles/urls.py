@@ -12,6 +12,6 @@ urlpatterns = [
     path('registration/complete-profile/<int:pk>/', ProfileCompletionView.as_view(), name='profile_completion'),
     path('registration/add-profile-links/<int:pk>/', ProfileLinkAdditionView.as_view(), name='profile_links'),
     path('registration/add-address/', AddressView.as_view(), name='address'),
-    path("profile/", ProfileView.as_view(), name="profile"),
+    path("profile/<int:pk>/", ProfileView.as_view(), name="profile"),
     path('logout/', LogoutView.as_view(), name='logout'),
 ]

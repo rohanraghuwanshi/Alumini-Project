@@ -2,10 +2,11 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
-from django.views.generic import CreateView, UpdateView, TemplateView
+from django.views.generic import CreateView, UpdateView, TemplateView, DetailView
 
 from .forms import *
-from .models import Profile, Address
+from .models import *
+from homeapp.models import FooterAboutus
 
 # Create your views here.
 
@@ -71,5 +72,15 @@ class ProfileLinkAdditionView(UpdateView):
         form.save()
         return redirect('/')
 
-class ProfileView(TemplateView):
+class ProfileView(DetailView):
+    model = Profile
     template_name = "registration/profilepage.htm"
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(ProfileView, self).get_context_data(*args, **kwargs)
+        context['footer'] = FooterAboutus.objects.all()[0]
+        context['experiences'] = Experience.objects.all().filter(user=self.kwargs['pk'])
+        context['education'] = Education.objects.all().filter(user=self.kwargs['pk'])
+        context['achievements'] = Achievement.objects.all().filter(user=self.kwargs['pk'])
+        context['skills'] = Skills.objects.all().filter(user=self.kwargs['pk'])
+        return context

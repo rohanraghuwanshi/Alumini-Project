@@ -4,32 +4,32 @@
 	<div class="container">
 		<div class="profile-details row">
 			<div class="profile-image col-lg-6 pb-3">
-				<img src="{% static '/images/profilepic/profile.jpg' %}" alt="">
+				<img src="{{ profile.profilepic.url }}" alt="">
 			</div>
 			<div class="profile-text col-lg-6 p-3">
 				<div class="personal-details">
-					<h1>Rohan Raghuvanshi</h1>
-					<p>Student</p>
+					<h1>{{ profile.user.first_name }} {{ profile.user.last_name }}</h1>
+					<p>{{profile.profession}}</p>
 				</div>
 				<div class="user-bio pb-3">
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, odio rerum quis dolore
-						dolores, numquam eos excepturi eveniet iusto enim assumenda natus ad vitae maiores sint.
-						Repudiandae alias quaerat cupiditate.</p>
+					<p>{{ profile.bio | linebreaks }}</p>
 				</div>
 				<div class="general-info">
 					<h5>General Info</h5>
 					<ul>
-						<li><span>Date of Birth</span>Nov 6, 2000</li>
-						<li><span>Address</span>House 123/A, Sai Enclave, Vidisha (M.P.)</li>
-						<li><span>Email</span>rohanraghuvanshi001@gmail.com</li>
-						<li><span>Phone</span>9584207104</li>
+						<li><span>Address</span>{{ profile.user.address.house_number }}
+							{{ profile.user.address.locality }}, {{ profile.user.address.city }},
+							{{ profile.user.address.state }}</li>
+						<li><span>Email</span>{{ profile.user.email }}</li>
+						<li><span>Phone</span>{{ profile.phone }}</li>
 					</ul>
 				</div>
 				<div class="social-links pt-2">
-					<a href="#" class="fa fa-lg fa-facebook"></a>
-					<a href="#" class="fa fa-lg fa-linkedin"></a>
-					<a href="#" class="fa fa-lg fa-instagram"></a>
-					<a href="#" class="fa fa-lg fa-twitter"></a>
+					<a href="{{ profile.github }}" class="fa fa-lg fa-github"></a>
+					<a href="{{ profile.facebook }}" class="fa fa-lg fa-facebook"></a>
+					<a href="{{ profile.linkedin }}" class="fa fa-lg fa-linkedin"></a>
+					<a href="{{ profile.instagram }}" class="fa fa-lg fa-instagram"></a>
+					<a href="{{ profile.twitter }}" class="fa fa-lg fa-twitter"></a>
 				</div>
 			</div>
 		</div>
@@ -39,10 +39,11 @@
 <section class="experience-section pt-5">
 	<div class="container">
 		<h1 class="pb-5 section-title">Experience</h1>
-
+		{% for e in experiences %}
+		
 		<div class="experience pb-4">
 			<div class="experience-title">
-				<h3>Junior Web Developer Intern</h3>
+				<h3>{{ e.experience }}</h3>
 				<p>Fourcode Software Sources</p>
 			</div>
 			<div class="experience-desc">
@@ -50,21 +51,11 @@
 				<p class="pt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate nemo odio eaque
 					ducimus reprehenderit vero, beatae repellat voluptate ad totam, aut expedita suscipit animi magni
 					ipsam dolorum. Sapiente, aperiam.</p>
+				</div>
 			</div>
-		</div>
-		<div class="experience pb-4">
-			<div class="experience-title">
-				<h3>Senior Web Developer Intern</h3>
-				<p>Fourcode Software Sources</p>
-			</div>
-			<div class="experience-desc">
-				<small>May 2020 - June 2020</small>
-				<p class="pt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate nemo odio eaque
-					ducimus reprehenderit vero, beatae repellat voluptate ad totam, aut expedita suscipit animi magni
-					ipsam
-					dolorum. Sapiente, aperiam.</p>
-			</div>
-		</div>
+		{% endfor %}
+
+		<a href="#" class="add-experience pb-4"> + Add Experience</a>
 
 	</div>
 </section>
@@ -73,31 +64,19 @@
 	<div class="container">
 		<h1 class="pb-5 section-title">Education</h1>
 
+		{% for e in education %}
 		<div class="experience pb-4">
 			<div class="experience-title">
-				<h3>Trinity Convent Sr. Secondary School</h3>
-				<p>High School</p>
-			</div>
-			<div class="experience-desc">
-				<small>May 2019 - June 2019</small>
-				<p class="pt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate nemo odio eaque
-					ducimus reprehenderit vero, beatae repellat voluptate ad totam, aut expedita suscipit animi magni
-					ipsam dolorum. Sapiente, aperiam.</p>
+				<h3>{{ e.institution_name }}</h3>
+				<div class="experience-desc">
+					<small>{{ e.start_date }} - {{ e.end_date }}</small>
+				</div>
+				<p>{{ e.program_name }}, {{ e.branch }}</p>
+				<p style="color:#ff1100"> CGPA - {{ e.cgpa}}</p>
 			</div>
 		</div>
-		<div class="experience pb-4">
-			<div class="experience-title">
-				<h3>Medicaps University</h3>
-				<p>B.Tech Computer Science Track</p>
-			</div>
-			<div class="experience-desc">
-				<small>August 2018 - Present</small>
-				<p class="pt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate nemo odio eaque
-					ducimus reprehenderit vero, beatae repellat voluptate ad totam, aut expedita suscipit animi magni
-					ipsam
-					dolorum. Sapiente, aperiam.</p>
-			</div>
-		</div>
+		{% endfor %}
+		<a href="#" class="add-experience pb-4"> + Add Education</a>
 	</div>
 </section>
 
@@ -106,13 +85,11 @@
 		<h1 class="pb-5 section-title">Achiements and Certificates</h1>
 
 		<ul class="achievements-list pb-4">
-			<li><i class="fa fa-trophy text-warning p-2"> </i> Python Mega Course Certification</li>
-			<li><i class="fa fa-trophy text-warning p-2"> </i> Portfolio Website Created</li>
-			<li><i class="fa fa-trophy text-warning p-2"> </i> 3rd Rank NMIMS Hackathon</li>
-			<li><i class="fa fa-trophy text-warning p-2"> </i> Python Mega Course Certification</li>
-			<li><i class="fa fa-trophy text-warning p-2"> </i> Portfolio Website Created</li>
-			<li><i class="fa fa-trophy text-warning p-2"> </i> 3rd Rank NMIMS Hackathon</li>
+			{% for a in achievements %}
+			<li><i class="fa fa-trophy text-warning p-2"> </i> {{ a.achievement }}</li>
+			{% endfor %}
 		</ul>
+		<a href="#" class="add-experience pb-4"> + Add Achiement</a>
 	</div>
 </section>
 
@@ -124,22 +101,13 @@
 			<div class="col-lg-6">
 				<h3>Skills</h3>
 				<ul class="achievements-list pb-4">
-					<li>Python</li>
-					<li>Django</li>
-					<li>HTML</li>
-					<li>CSS</li>
-					<li>Java Script</li>
-				</ul>
-			</div>
-			<div class="col-lg-6">
-				<h3>Hobbies</h3>
-				<ul class="achievements-list pb-4">
-					<li>Football</li>
-					<li>Pool</li>
-					<li>Reading</li>
+					{% for s in skills %}
+					<li>{{ s.skill }}</li>
+					{% endfor %}
 				</ul>
 			</div>
 		</div>
+		<a href="#" class="add-experience pb-4"> + Add Skills</a>
 	</div>
 </section>
 
